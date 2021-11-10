@@ -1,0 +1,11 @@
+{
+  "name": "@factry/package-versions",
+  "version": "1.0.0",
+  "description": "Get exact versions for dependencies in package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

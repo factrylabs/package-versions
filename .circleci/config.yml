@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs:
+  release:
+    working_directory: ~/repo
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - checkout
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Set scope of package to public
+          command: npm config set access public
+      - run:
+          name: Publish package
+          command: npm publish
+
+workflows:
+  version: 2
+  release:
+    jobs:
+      - release:
+          filters:
+            branches:
+              only:  master
