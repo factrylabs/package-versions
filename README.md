@@ -2,11 +2,12 @@
 ## Usage
 ```javascript
 import getVersions from '@factry/package-versions'
+import packageLock from './package-lock.json'
 
-getVersions()
-getVersions('dependencies')
+getVersions(packageLock, )
+getVersions(packageLock, 'dependencies')
 
-getVersions('peerDependencies')
+getVersions(packageLock, 'peerDependencies')
 
-getVersions('devDependencies')
+getVersions(packageLock, 'devDependencies')
 ```
